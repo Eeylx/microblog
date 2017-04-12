@@ -3,7 +3,7 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+var bodyParser = require('body-parser');    // 该模块用于解析 req.body 中的内容
 
 var index = require('./routes/index');
 var users = require('./routes/users');

@@ -1,0 +1,19 @@
+
+__dirname : 在任何模块文件内部，可以使用__dirname变量获取当前模块文件所在目录的完整绝对路径
+
+
+node.js模块:
+    path-to-regexp : express 使用 path-to-regexp 模块实现路由匹配
+    body-parser : 解析req.body
+
+req包含请求来的相关信息, 几个常用的req属性:
+    req.query : 解析后的url中的querystring, 如?name=haha, req.query的值为 {name: 'haha'}
+    req.params : 解析url中的占位符, 如/:name, 访问/haha, req.params的值为{name: 'haha'}
+    req.body : 解析后的请求提, 需要使用相关的模块, 如body-parser, 请求体为{"name": "haha"}, 则req.body为{name: 'haha'}
+
+
+
+res用来返回该请求的响应
+
+    res.render : 第一个参数是模板的名字, 第二个参数是传给模板的数据
+                 res.render的作用就是将模板和数据结合生成html, 同时设置响应头中的Content-Type: text/html, 告诉浏览器返回的是html
