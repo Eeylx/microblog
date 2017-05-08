@@ -1,1 +1,15 @@
-// https://github.com/nswbmw/N-blog/blob/master/book/4.3%20%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.md
+/**
+ * @Author : lyx
+ * @Data : 2017/5/8
+ */
+'use strict';
+
+module.exports = {
+    port: 3000,     // 程序启动要监听的端口号
+    session: {      // express-session 的配置信息
+        secret: 'myblog',
+        key: 'myblog',
+        maxAge: 2592000000
+    },
+    mongodb: 'mongodb://localhost:27017/myblog'     // mongodb 的地址, myblog 为 db 名
+};
