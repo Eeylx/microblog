@@ -1,0 +1,5 @@
+# idea config
+.idea
+
+# Dependency directories
+node_modules
