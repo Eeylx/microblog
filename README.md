@@ -40,12 +40,12 @@ Created in  April 12, 2017
 
         这里也是很长的代码!(两个tab或8个空格)
 - # 链接
- - 点这里回到[最开始](microblog.md)
+    - 点这里回到[最开始](microblog.md)
 
- - 这里是[参考资料](http://www.jianshu.com/p/de9c98bba332)
+    - 这里是[参考资料](http://www.jianshu.com/p/de9c98bba332)
 
- - <www.baidu.com>
+    - <www.baidu.com>
 
- - 图片
+    - 图片
     ![图片名称](./public/images/id=52520072.jpg)
 
