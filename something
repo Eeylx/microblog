@@ -17,3 +17,10 @@ res用来返回该请求的响应
 
     res.render : 第一个参数是模板的名字, 第二个参数是传给模板的数据
                  res.render的作用就是将模板和数据结合生成html, 同时设置响应头中的Content-Type: text/html, 告诉浏览器返回的是html
+
+
+express-session、connect-mongo 和 connect-flash 的区别与联系 :
+
+    express-session: 会话（session）支持中间件
+    connect-mongo: 将 session 存储于 mongodb，需结合 express-session 使用，我们也可以将 session 存储于 redis，如 connect-redis
+    connect-flash: 基于 session 实现的用于通知功能的中间件，需结合 express-session 使用

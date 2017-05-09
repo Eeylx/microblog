@@ -1,29 +1,53 @@
+'use strict';
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');    // 该模块用于解析 req.body 中的内容
+var favicon = require('serve-favicon');     // 用于设置网站图标
+var logger = require('morgan');             // 关于http请求的日志中间件
+var cookieParser = require('cookie-parser');    // 处理请求中的 cookie
+var bodyParser = require('body-parser');    // 用于解析 req.body 中的内容
+var session = require('express-session');   // session
+var mongoStore = require('connect-mongo')(session); // 用于存储 session
+var flash = require('connect-flash');       // 用来在网页上显示通知
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+var config = require('config-lite')(__dirname); // 查找该目录下的config文件夹, 再查找default文件
+var routes = require('./routes/index');     // 路由
 
 var app = express();
 
-// view engine setup
+
+// 设置模板目录
 app.set('views', path.join(__dirname, 'views'));
+// 设置模板引擎为 ejs
 app.set('view engine', 'ejs');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+// 设置网站图标
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+// 设置静态文件目录
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
+// session
+app.use(session({
+    name: config.session.key,   // 设置 cookie 中保存 session id 的字段名称
+    secret: config.session.secret, // 通过设置 secret 来计算 hash 值并放在 cookie 中, 使产生的 signedCookie 防篡改
+    resave: true,             // 强制更新 session
+    saveUninitialized: false, // 设置为 false, 强制创建一个 session, 即使用户未登录
+    cookie: {
+        maxAge: config.session.maxAge // 过期时间, 过期后 cookie 中的 session id 自动删除
+    },
+    store: new mongoStore({    // 将 session 存储到 mongodb
+        url: config.mongodb   // mongodb 地址
+    })
+}));
+
+// flash 中间件, 用来显示通知, 基于 session, 故需要放在 session 之后
+app.use(flash());
+
+// 路由
+routes(app);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
