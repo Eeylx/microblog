@@ -1,5 +1,5 @@
 # idea config
-.idea
+/.idea/
 
 # Dependency directories
-node_modules
+/node_modules/
