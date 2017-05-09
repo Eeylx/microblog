@@ -6,6 +6,9 @@
 
 module.exports = {
 
+    /**
+     * 检测是否已登录
+     */
     checkLogin: function checkLogin(req, res, next) {
         if (!req.session.user) {
             req.flash('error', '未登录!');
@@ -14,6 +17,9 @@ module.exports = {
         next();
     },
 
+    /**
+     * 检测是否未登录
+     */
     checkNotLogin: function checkNotLogin(req, res, next) {
         if (req.session.user) {
             req.flash('error', '已登录!');
