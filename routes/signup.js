@@ -4,17 +4,24 @@
  */
 'use strict';
 
-var checkNotLogin = require('../middlewares/check').checkNotLogin();
+var express = require('express');
+var router = express.Router();
 
-module.exports = function (app) {
+var check = require('../middlewares/check');
 
-    // 注册页
-    app.get('/signup', checkNotLogin, function (req, res) {
-        res.send(req.flash());
-    });
 
-    // 用户注册
-    app.post('/signup', checkNotLogin, function (req, res) {
-        res.send(req.flash());
-    });
-};
+// 检测是否未登录, 在未登录状态下才能注册
+router.use(check.checkNotLogin);
+
+// GET /signup 注册页
+router.get('/signup', function (req, res) {
+    res.send(req.flash());
+});
+
+// POST /signup 用户注册
+router.post('/signup', function (req, res) {
+    res.send(req.flash());
+});
+
+
+module.exports = router;
