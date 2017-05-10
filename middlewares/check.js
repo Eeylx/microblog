@@ -7,7 +7,7 @@
 module.exports = {
 
     /**
-     * 检测是否已登录
+     * 检测是否是已登录状态
      */
     checkLogin: function checkLogin(req, res, next) {
         if (!req.session.user) {
@@ -18,7 +18,7 @@ module.exports = {
     },
 
     /**
-     * 检测是否未登录
+     * 检测是否是未登录状态
      */
     checkNotLogin: function checkNotLogin(req, res, next) {
         if (req.session.user) {
