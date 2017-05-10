@@ -10,6 +10,7 @@ var flash = require('connect-flash');       // 用来在网页上显示通知
 
 var config = require('config-lite')(__dirname); // 查找该目录下的config文件夹, 再查找default文件
 var routes = require('./routes/index');     // 路由
+var pkg = require('./package.json');
 
 var app = express();
 
