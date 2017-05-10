@@ -4,6 +4,17 @@
   "description": "my first blog",
   "author": "lyx",
   "private": true,
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eeylx/microblog.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eeylx/microblog/issues"
+  },
+  "homepage": "https://github.com/Eeylx/microblog#readme",
   "scripts": {
     "start": "node ./bin/www"
   },
