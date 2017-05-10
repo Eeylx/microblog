@@ -46,7 +46,7 @@ app.use(session({
 app.use(flash());
 
 // 路由, 放在设置静态文件目录之后, 避免处理静态文件请求
-routes(app);
+app.use(routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
