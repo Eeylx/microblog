@@ -19,18 +19,6 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 // 设置模板引擎为 ejs
 app.set('view engine', 'ejs');
-// 设置模板全局常量, app.locals 上通常挂载常量信息
-app.locals.blog = {
-    title: pkg.name,
-    description: pkg.description
-};
-// 添加模板必须的常量, res.locals 上通常挂载变量信息
-app.use(function (req, res, next) {
-    res.locals.user = req.session.user;
-    res.locals.success = req.flash('success').toString();
-    res.local.error = req.flash('error').toString();
-    next();
-});
 
 // 设置网站图标
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -58,6 +46,18 @@ app.use(session({
 // flash 中间件, 用来显示通知, 基于 session, 故需要放在 session 之后
 app.use(flash());
 
+// 设置模板全局常量, app.locals 上通常挂载常量信息
+app.locals.blog = {
+    title: pkg.name,
+    description: pkg.description
+};
+// 添加模板必须的常量, res.locals 上通常挂载变量信息
+app.use(function (req, res, next) {
+    res.locals.user = req.session.user;
+    res.locals.success = req.flash('success').toString();
+    res.locals.error = req.flash('error').toString();
+    next();
+});
 // 路由, 放在设置静态文件目录之后, 避免处理静态文件请求
 app.use(routes);
 
