@@ -15,7 +15,7 @@ router.use(check.checkLogin);
 
 // GET /logout 登出
 router.get('/', function (req, res) {
-    res.send(req.flash());
+    res.render(req.flash());
 });
 
 

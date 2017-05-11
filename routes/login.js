@@ -15,12 +15,12 @@ router.use(check.checkNotLogin);
 
 // GET /login 登录页
 router.get('/', function (req, res) {
-    res.send(req.flash());
+    res.render(req.flash());
 });
 
 // POST /login 用户登录
 router.post('/', function (req, res) {
-    res.send(req.flash());
+    res.render(req.flash());
 });
 
 

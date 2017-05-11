@@ -15,12 +15,12 @@ router.use(check.checkNotLogin);
 
 // GET /reg 注册页
 router.get('/', function (req, res) {
-    res.send(req.flash());
+    res.render('reg');
 });
 
 // POST /reg 用户注册
 router.post('/', function (req, res) {
-    res.send(req.flash());
+    res.render(req.flash());
 });
 
 
