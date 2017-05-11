@@ -7,6 +7,22 @@ Created in  April 12, 2017
 #### express: `4.15.0`
 #### MongoDB: `3.4.2`
 
+# 涉及到的东西
++ ### 后端
+    - 语言: `node.js`
+    - 框架: `express`
+    - 包管理工具: `npm`
+    - 模板引擎: `ejs` 	| `jade`
+    - 数据库: `mongodb` | `mysql`
+        * 驱动数据库: `mongolass` | `mongoose`
++ ### 前端
+    - 语言?: `jQuery`
+    - 框架?: `Semantic-UI`
++ ### 代码相关
+    - 代码检测工具: `JSLint`
+    - 根据注释自动生成API文档: `JSDuck` | `JSDoc` `YUIDoc` `Dox` `Docco`
+    
+- - - - - - -
 
 # 附录： Markdown文件的写法
 
@@ -116,7 +132,7 @@ Created in  April 12, 2017
 
 + ### 图片
     - 格式是 : `![图片名称](图片地址)`
-    ![图片名称](./public/images/id=52520072.jpg)
+    ![图片名称](public/README_images/id=52520072.jpg)
     
             ![智子](./public/images/id=52520072.jpg)
 
