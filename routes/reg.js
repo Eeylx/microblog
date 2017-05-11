@@ -20,6 +20,15 @@ router.get('/', function (req, res) {
 
 // POST /reg 用户注册
 router.post('/', function (req, res) {
+    var name = req.fields.name;
+    var password = req.fields.password;
+    var repassword = req.fields.repassword;
+    var gender = req.fields.gender;
+    var bio = req.fields.bio;
+    var avatar = req.files.avatar.path.split(path.sep).pop();
+
+    
+
     res.render(req.flash());
 });
 
