@@ -16,8 +16,8 @@ Created in  April 12, 2017
     - 数据库: `mongodb` | `mysql`
         * 驱动数据库: `mongolass` | `mongoose`
 + ### 前端
-    - 语言?: `jQuery`
-    - 框架?: `Semantic-UI`
+    - 语言: `jQuery`
+    - 框架: `Semantic-UI`
 + ### 代码相关
     - 代码检测工具: `JSLint`
     - 根据注释自动生成API文档: `JSDuck` | `JSDoc` `YUIDoc` `Dox` `Docco`
