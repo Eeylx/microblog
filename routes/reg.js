@@ -14,7 +14,7 @@ var reg = require('../controller/reg');
 router.use(check.checkNotLogin);
 
 // GET /reg 注册页
-router.get('/', reg.regg);
+router.get('/', reg.reg);
 
 // POST /reg 用户注册
 router.post('/', reg.register);
