@@ -47,11 +47,11 @@ app.use(session({
 // flash 中间件, 用来显示通知, 基于 session, 故需要放在 session 之后
 app.use(flash());
 
-// 处理表单及文件上传的中间件
-app.use(formidable({
-    uploadDir: path.join(__dirname, 'public', 'images'),    // 上传文件目录
-    keepExtensions: true    // 保留后缀
-}));
+// // 处理表单及文件上传的中间件
+// app.use(formidable({
+//     uploadDir: path.join(__dirname, 'public', 'images'),    // 上传文件目录
+//     keepExtensions: true    // 保留后缀
+// }));
 
 // 设置模板全局常量, app.locals 上通常挂载常量信息
 app.locals.blog = {
@@ -66,7 +66,7 @@ app.use(function (req, res, next) {
     next();
 });
 // 路由, 放在设置静态文件目录之后, 避免处理静态文件请求
-app.use(routes);
+app.use('/',routes);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
