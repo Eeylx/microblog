@@ -18,6 +18,5 @@ exports.register = function register(req, res) {
     var avatar = req.files.avatar.path.split(path.sep).pop();
 
 
-    // res.render(req.flash());
-    return res.render('hahahah');
+    return res.send('hahahah');
 };
