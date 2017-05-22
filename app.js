@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');    // 解析 req.body 中的内容
 var session = require('express-session');   // session
 var mongoStore = require('connect-mongo')(session); // 用于存储 session
 var flash = require('connect-flash');       // 在网页上显示通知
-var formidable = require('express-formidable'); // 处理表单及文件上传的中间件
+// var formidable = require('express-formidable'); // 处理表单及文件上传的中间件
 
 var config = require('config-lite')(__dirname); // 查找该目录下的config文件夹, 再查找default文件
 var routes = require('./routes/index');     // 路由
@@ -47,11 +47,11 @@ app.use(session({
 // flash 中间件, 用来显示通知, 基于 session, 故需要放在 session 之后
 app.use(flash());
 
-// // 处理表单及文件上传的中间件
-// app.use(formidable({
-//     uploadDir: path.join(__dirname, 'public', 'images'),    // 上传文件目录
-//     keepExtensions: true    // 保留后缀
-// }));
+// 处理表单及文件上传的中间件
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 
 // 设置模板全局常量, app.locals 上通常挂载常量信息
 app.locals.blog = {
