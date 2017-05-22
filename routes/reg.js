@@ -7,6 +7,8 @@
 var express = require('express');
 var router = express.Router();
 
+var upload = require('../middlewares/multerUtil');
+
 var check = require('../middlewares/check');
 var reg = require('../controller/reg');
 
@@ -17,7 +19,7 @@ router.use(check.checkNotLogin);
 router.get('/', reg.reg);
 
 // POST /reg 用户注册
-router.post('/', reg.register);
+router.post('/', upload.single('avatar'), reg.register);
 
 
 module.exports = router;
