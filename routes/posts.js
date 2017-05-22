@@ -16,7 +16,7 @@ router.use(check.checkLogin);
 // GET /posts 所有用户或特定用户的文章页
 // 例如: /posts?author=xxx
 router.get('/', function (req, res) {
-    res.render(req.flash());
+    res.render('posts');
 });
 
 // POST /posts 发表一篇文章
