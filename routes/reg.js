@@ -19,6 +19,7 @@ router.use(check.checkNotLogin);
 router.get('/', reg.reg);
 
 // POST /reg 用户注册
+// TODO : upload 没有错误处理
 router.post('/', upload.single('avatar'), reg.register);
 
 
