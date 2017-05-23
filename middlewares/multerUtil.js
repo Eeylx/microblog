@@ -4,6 +4,9 @@
  *
  * 更多用法请参考multer的官方地址:
  *      https://github.com/expressjs/multer
+ *
+ * express文件上传中间件Multer最新使用说明:
+ *      https://cnodejs.org/topic/564f32631986c7df7e92b0db
  */
 'use strict';
 
