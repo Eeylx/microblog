@@ -141,7 +141,7 @@ Created in  April 12, 2017
 
 + ### 图片
     - 格式是 : `![图片名称](图片地址)`
-    ![图片名称](public/README_images/id=52520072.jpg)
+    ![图片名称](https://raw.githubusercontent.com/Eeylx/microblog/master/public/README_images/id%3D52520072.jpg)
     
-            ![智子](./public/images/id=52520072.jpg)
+            ![智子](https://raw.githubusercontent.com/Eeylx/microblog/master/public/README_images/id%3D52520072.jpg)
 
